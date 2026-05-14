@@ -1,33 +1,31 @@
 # Driver Drowsiness Detection using CARLA Simulator
 
+This is my project where I built a drowsiness detection system and tested it inside the CARLA driving simulator.
+
+I used my mobile camera as a webcam to capture my face in real time. The system detects if the driver is alert or drowsy using a CNN model I trained. If drowsiness is detected for multiple frames continuously, an alert shows up in the CARLA simulation window.
+
+---
+
+## Demo
+
 ![Demo](demo.gif)
 
-## About the Project
+---
 
-This project is a real-time Driver Drowsiness Detection System developed using Python, TensorFlow, OpenCV, and the CARLA Simulator.
+## What it does
 
-The system detects driver drowsiness using a CNN model and shows the output during a live driving simulation in CARLA.
-
-For webcam input, I connected my mobile camera to my laptop and used it for real-time face monitoring. The model processes the captured frames and detects whether the driver is alert or drowsy. When drowsiness is detected continuously, an alert is displayed in the simulation window.
+- Detects drowsiness in real time using webcam (mobile camera)
+- Uses OpenCV to detect face
+- CNN model predicts alert or drowsy
+- If drowsy for too long, alert shows in CARLA window
+- Vehicle runs on autopilot in CARLA while detection happens
 
 ---
 
-## Features
-
-- Real-time drowsiness detection
-- Mobile camera used as webcam input
-- Face detection using OpenCV
-- CNN-based prediction model
-- CARLA simulator integration
-- Live alert display
-- Pygame simulation window
-
----
-
-## Technologies Used
+## Technologies I used
 
 - Python
-- TensorFlow / Keras
+- TensorFlow and Keras
 - OpenCV
 - CARLA Simulator
 - Pygame
@@ -35,73 +33,55 @@ For webcam input, I connected my mobile camera to my laptop and used it for real
 
 ---
 
-## Workflow
+## How to run
 
-```text
-Mobile Camera Input
-        ↓
-Face Detection
-        ↓
-Image Preprocessing
-        ↓
-CNN Prediction
-        ↓
-Drowsiness Detection
-        ↓
-Alert Display in CARLA Simulator
+Clone the repo:
 ```
-
----
-
-## Project Structure
-
-```bash
-drowsiness-detection-carla/
-│
-├── model/
-├── screenshots/
-├── demo.gif
-├── project.py
-├── requirements.txt
-├── model_train.ipynb
-└── README.md
-```
-
----
-
-## Installation
-
-Clone the repository:
-
-```bash
 git clone https://github.com/junaith1704/drowsiness-detection-carla.git
 cd drowsiness-detection-carla
 ```
 
-Install the required libraries:
-
-```bash
+Install libraries:
+```
 pip install -r requirements.txt
 ```
 
-Start the CARLA simulator and run:
-
-```bash
+Start CARLA simulator first, then run:
+```
 python project.py
 ```
 
 ---
 
-## Future Improvements
+## Project files
 
-- Audio alert system
-- Eye blink detection
-- Better face tracking
-- Improved CNN model accuracy
-- Lane detection integration
+```
+drowsiness-detection-carla/
+├── project.py           - main detection script
+├── model_train.ipynb    - how I trained the CNN model
+├── requirements.txt     - libraries needed
+└── README.md
+```
 
 ---
 
-## Author
+## What I learned
 
-Mohammed Junaith Sulthan
+- How to integrate a deep learning model with a simulator
+- Real time face detection using OpenCV
+- Training a CNN from scratch for binary classification
+- Using CARLA Python API to spawn and control vehicles
+
+---
+
+## Future ideas
+
+- Add audio alert
+- Try eye blink detection instead of full face
+- Test in different lighting conditions
+
+---
+
+**Mohammed Junaith Sulthan**  
+B.E CSE (AI & ML) - Sathyabama University  
+junaith2006@gmail.com
